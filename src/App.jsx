@@ -3,6 +3,9 @@ import Feedback from './components/Feedback/Feedback';
 import Options from './components/Options/Options';
 import Notification from './components/Notification/Notification';
 
+import styles from './App.module.css';
+import Description from './components/Description/Description';
+
 const LS_KEY = 'feedback-data';
 
 const App = () => {
@@ -32,12 +35,12 @@ const App = () => {
     : 0;
 
   return (
-    <div className="container">
-      <h1>Sip Happens Café</h1>
-      <p>
-        Please leave your feedback about our service by selecting one of the
-        options below.
-      </p>
+    <div className={styles.container}>
+      <Description
+        title="Sip Happens Café"
+        content="Please leave your feedback about our service by selecting one of the
+        options below."
+      ></Description>
       <Options
         onLeaveFeedback={updateFeedback}
         onReset={resetFeedback}
